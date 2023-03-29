@@ -30,12 +30,7 @@ jobs:
           CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
         with:
-          browser: firefox
-      - name: Upload videos
-        uses: actions/upload-artifact@v3
-        with:
-          name: video-firefox-run
-          path: cypress/videos
+          command: npx cypress run --browser firefox --config video=false
   cypress-run-edge:
     runs-on: ubuntu-22.04
     steps:
