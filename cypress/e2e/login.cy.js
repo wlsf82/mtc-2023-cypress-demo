@@ -7,7 +7,7 @@ describe('Login', () => {
   it('logs in successfully', () => {
     // Act
     cy.get('[data-test="username"]').type(Cypress.env('USERNAME'))
-    cy.get('[data-test="password"]').type(Cypress.env('PASSWORD'))
+    cy.get('[data-test="password"]').type(Cypress.env('PASSWORD'), { log: false })
     cy.get('[data-test="login-button"]').click()
 
     // Assert
