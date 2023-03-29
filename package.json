@@ -1,0 +1,20 @@
+{
+  "name": "mtc-2023-cypress-demo",
+  "version": "1.0.0",
+  "description": "Sample project for a Cypress vs. Playwright battle at MTC 2023.",
+  "main": "cypress.config.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "test": "cypress run"
+  },
+  "keywords": [
+    "cypress-testing",
+    "MTC-2023",
+    "modern-web-testing"
+  ],
+  "author": "Walmyr <wlsf82@gmail.com> (https://walmyr.dev/)",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.9.0"
+  }
+}
