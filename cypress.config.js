@@ -5,5 +5,6 @@ module.exports = defineConfig({
     baseUrl: 'https://www.saucedemo.com',
     supportFile: false,
   },
+  experimentalWebKitSupport: true,
   fixturesFolder: false,
 })
