@@ -6,5 +6,4 @@ module.exports = defineConfig({
     supportFile: false,
   },
   experimentalWebKitSupport: true,
-  fixturesFolder: false,
 })
