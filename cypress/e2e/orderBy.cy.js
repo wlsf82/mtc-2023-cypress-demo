@@ -1,8 +1,7 @@
 describe('Order by', () => {
   beforeEach(() => {
     // Arrange
-    cy.setCookie('session-username', Cypress.env('USERNAME'))
-    cy.visit('/inventory.html', { failOnStatusCode: false })
+    cy.programmaticLogin()
   })
 
   it('orders by Price (high to low)', () => {

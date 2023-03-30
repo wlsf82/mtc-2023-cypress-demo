@@ -1,8 +1,7 @@
 describe('Checkout', () => {
   beforeEach(() => {
     // Arrange
-    cy.setCookie('session-username', Cypress.env('USERNAME'))
-    cy.visit('/inventory.html', { failOnStatusCode: false })
+    cy.programmaticLogin()
   })
 
   it('goes through the whole checkout process successfully', () => {

@@ -3,8 +3,7 @@ import socialItems from "../fixtures/social"
 describe('Footer links', () => {
   it(`checks that social links open in a new tab`, () => {
     // Arrange
-    cy.setCookie('session-username', Cypress.env('USERNAME'))
-    cy.visit('/inventory.html', { failOnStatusCode: false })
+    cy.programmaticLogin()
 
     socialItems.forEach(({ type, url }) => {
       // Assert
