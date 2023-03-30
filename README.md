@@ -1,5 +1,7 @@
 # mtc-2023-cypress-demo
 
+[![CI](https://github.com/wlsf82/mtc-2023-cypress-demo/actions/workflows/ci.yml/badge.svg)](https://github.com/wlsf82/mtc-2023-cypress-demo/actions)
+
 Sample project for a [Cypress](https://cypress.io) vs. [Playwright](https://playwright.dev/) battle at [MTC](https://minastestingconference.com.br/) 2023.
 
 ___
