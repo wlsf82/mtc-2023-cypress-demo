@@ -1,7 +1,7 @@
 import socialItems from "../fixtures/social"
 
 describe('Footer links', () => {
-  it(`checks that social links open in a new tab`, () => {
+  it('checks that social links open in a new tab', () => {
     // Arrange
     cy.programmaticLogin()
 
