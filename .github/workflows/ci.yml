@@ -10,15 +10,12 @@ jobs:
         uses: actions/checkout@v3
       - name: Cypress run
         uses: cypress-io/github-action@v5
+        with:
+          record: true
         env:
           CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
-      - name: Upload videos
-        uses: actions/upload-artifact@v3
-        with:
-          name: video-electron-run
-          path: cypress/videos
-          retention-days: 1
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
   cypress-run-chrome:
     runs-on: ubuntu-22.04
     steps:
@@ -29,14 +26,10 @@ jobs:
         env:
           CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
           browser: chrome
-      - name: Upload videos
-        uses: actions/upload-artifact@v3
-        with:
-          name: video-chrome-run
-          path: cypress/videos
-          retention-days: 1
+          record: true
   cypress-run-firefox:
     runs-on: ubuntu-22.04
     steps:
@@ -47,8 +40,9 @@ jobs:
         env:
           CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
-          command: npx cypress run --browser firefox --config video=false
+          command: npx cypress run --record --browser firefox
   cypress-run-edge:
     runs-on: ubuntu-22.04
     steps:
@@ -59,13 +53,10 @@ jobs:
         env:
           CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
           browser: edge
-      - name: Upload videos
-        uses: actions/upload-artifact@v3
-        with:
-          name: video-edge-run
-          path: cypress/videos
+          record: true
   cypress-run-safari:
     runs-on: ubuntu-22.04
     steps:
@@ -78,10 +69,6 @@ jobs:
         env:
           CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
-          command: npx cypress run --browser webkit
-      - name: Upload videos
-        uses: actions/upload-artifact@v3
-        with:
-          name: video-webkit-run
-          path: cypress/videos
+          command: npx cypress run --record --browser webkit
