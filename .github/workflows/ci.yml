@@ -1,5 +1,7 @@
 name: End-to-end tests
-on: push
+on:
+  push:
+  workflow_dispatch:
 jobs:
   cypress-run-electron:
     runs-on: ubuntu-22.04
