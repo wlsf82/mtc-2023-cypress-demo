@@ -15,7 +15,7 @@
   "author": "Walmyr <wlsf82@gmail.com> (https://walmyr.dev/)",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^13.6.1",
-    "playwright-webkit": "^1.34.0"
+    "cypress": "^14.5.3",
+    "playwright-webkit": "^1.54.1"
   }
 }
